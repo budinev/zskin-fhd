@@ -1,20 +1,19 @@
 <skin>
 	<!--
-	########## ZSkin-FHD_ v.1.2.0 by mmark #########################################################
-	#                                                
-	#    Version 1.2.0 released 01-10-2020           
-	#    For some Plugins Skinned please copy the file skin_user.xml in the path  etc/enigma2     
-	#   
-	#    CURRENTLY Image Supported 
-	#                                                
-	#    Adapted for Dream MultiMedia                           
-	#    Adapted for Dream Elite                     
-	#    Adapted for SatLodge                        
-	#    Adapted for Gemini 4.1                      
-	#                 SOON OTHER                     
-	################################################################################################
+	########## ZSkin-FHD_ v.1.2.1 by mmark ###########
+	#                                                #
+	#    Version 1.2.1 released 15-03-2020           #
+	#            Some Plugins Skinned                #                    
+	#                                                #
+	#      		  CURRENTLY                      #
+	#                                                #
+	#    Adapted for Dream MultiMedia                #           
+	#    Adapted for Dream Elite                     #
+	#    Adapted for SatLodge                        #
+	#                 SOON OTHER                     #
+	##################################################
 	-->
-	<!--  +++  Skin Z-Skin 1.0 by mmark  +++ 
+	<!--  +++  Skin Z-Skin 1.2.1 by mmark  +++ 
 	       unauthorized use or mods unless 
   	       prior approval of Author
   	       +++ PLEASE don't remove this disclaimer +++
@@ -541,10 +540,11 @@
 		<widget source="session.RecordState" render="Pixmap" position="45,855" size="50,45" pixmap="ZSkin-FHD/icons/icon_event_rec.png" blend="blend" zPosition="3" >
 			<convert type="ConditionalShowHide">Blink</convert>
 		</widget>
+		
 		<!-- Required Renderer zChannelNumber.py -->
-		<widget source="session.CurrentService" render="zChannelNumber" position="500,700" size="180,150" font="Regular;110" halign="center" valign="center" foregroundColor="#20ffff40" backgroundColor="#000000" transparent="1" zPosition="3" />
+		<widget source="session.CurrentService" render="zChannelNumber" position="470,701" size="280,150" font="Regular;110" halign="center" valign="center" foregroundColor="#20ffff40" backgroundColor="#000000" transparent="1" zPosition="3" />
 		<!-- SERVICE - EVENTS -->		
-		<widget source="session.CurrentService" render="Label" position="700,740" size="1000,90" font="Regular;80" noWrap="1" foregroundColor="#20ffffff" backgroundColor="#101010" transparent="1" zPosition="1" >
+		<widget source="session.CurrentService" render="Label" position="750,740" size="1000,90" font="Regular;80" noWrap="1" foregroundColor="#20ffffff" backgroundColor="#101010" transparent="1" zPosition="1" >
 			<convert type="ServiceName">Name</convert>
 		</widget>
 		<widget source="session.Event_Now" render="Label" position="140,855" size="140,45" font="Regular;40" foregroundColor="ltbluette" backgroundColor="header" transparent="1" zPosition="2" >
@@ -907,28 +907,25 @@
 	<screen name="ChannelSelection" position="0,0" size="1920,1080" title="Channel Selection" backgroundColor="#ff000000">
 		<ePixmap pixmap="ZSkin-FHD/menu/panels/ibbot.png" position="0,788" size="1920,347" zPosition="0" blend="blend" />
 		<ePixmap pixmap="ZSkin-FHD/menu/panels/ibtop.png" position="0,733" size="1920,347" zPosition="1" blend="blend" />
-		<ePixmap pixmap="ZSkin-FHD/menu/panels/cs.png" position="0,0" size="1920,1080" zPosition="-1" />
-		<!-- Required Renderer zScrollLabel.py (Or render="Label") -->
-		<widget source="ServiceEvent" render="zScrollLabel" position="80,65" size="400,450" font="Regular;28" halign="center" foregroundColor="white" backgroundColor="header" transparent="1" zPosition="2" >
-			<convert type="EventName">ExtendedDescription</convert>
-		</widget>
+		<eLabel position="40,40"   size="1840,730" backgroundColor="#40000000" zPosition="0" />
+		<eLabel position="60,60"   size="1150,690" backgroundColor="#20000000" zPosition="1" />
+		<eLabel position="1265,60" size="595,690"  backgroundColor="#20000000" zPosition="1" />
+		<eLabel position="1230,0" size="15,770"   backgroundColor="#FF000000" zPosition="2" />
 		<!-- List Channel --> 
-		<widget name="list" position="610,75" size="1230,650" scrollbarMode="showOnDemand" transparent="1" zPosition="3" itemHeight="50" itemWidth="1550"		
+		<widget name="list" position="70,80" size="1130,650" scrollbarMode="showOnDemand" transparent="1" zPosition="3" itemHeight="50" itemWidth="1550"		
 			serviceItemHeight="50" serviceNumberFont="Regular;27" serviceNameFont="Regular;30" serviceInfoFont="Regular;30" 
 			foregroundColor="#ffffff" foregroundColorSelected="ltbluette" backgroundColor="header" backgroundColorSelected="bluette" 
 			additionalInfoFont="Regular;28" colorAdditionalInfo="#808080" 
 			colorServiceDescription="ltbluette" colorServiceDescriptionSelected="white" foregroundColorServiceNotAvail="#505050" 
 			colorEventProgressbarBorder="grey" colorEventProgressbarBorderSelected="white" picServiceEventProgressbar="Z-Skin/skin_default/progcl.png" />
-		<!-- Picon 
-		<ePixmap pixmap="ZSkin-FHD/icons/mirror.png" position="40,570" size="417,250" zPosition="-2" />
-		<widget source="ServiceEvent" render="Picon"  path="picon" position="40,570" size="417,250" blend="blend" zPosition="-1" >
+		<!-- PICON -->
+		<widget source="ServiceEvent" render="Picon" path="picon" position="1280,70" size="220,132" blend="blend" zPosition="3" >
 			<convert type="ServiceName">Reference</convert>
 		</widget>
-		-->
-		<!-- PICON -->
-		<ePixmap pixmap="ZSkin-FHD/icons/mirror.png" position="40,570" size="417,250" zPosition="-2" />
-		<widget source="session.CurrentService" render="Picon" path="picon" position="40,570" size="417,250" blend="blend" zPosition="-1" >
-			<convert type="ServiceName">Reference</convert>
+		<eLabel position="1280,210"   size="565,2" backgroundColor="#303030" zPosition="3" />
+		<!-- Required Renderer zScrollLabel.py (Or render="Label") -->
+		<widget source="ServiceEvent" render="zScrollLabel" position="1280,225" size="565,515" font="Regular;28" halign="center" foregroundColor="white" backgroundColor="header" transparent="1" zPosition="2" >
+			<convert type="EventName">ExtendedDescription</convert>
 		</widget>
 		<!-- Blinking pixmap (recording in progress) -->
 		<ePixmap pixmap="ZSkin-FHD/icons/icon_event.png" position="45,855" size="50,45" blend="blend"  zPosition="1" />
@@ -943,12 +940,6 @@
 		<widget source="ServiceEvent" render="Label" position="275,855" size="1060,45" font="Regular;40" backgroundColor="#202020" transparent="1" zPosition="3">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<!--
-		<widget source="ServiceEvent" render="Label" position="1345,855" size="200,45" font="Regular;40" foregroundColor="red" backgroundColor="header" halign="right" valign="center" transparent="1" zPosition="5">
-			<convert type="EventTime">EndTime</convert>
-			<convert type="ClockToText">Default</convert>
-		</widget>
-		-->
 		<!-- Clock -->
 		<widget source="global.CurrentTime" render="Label" position="1360,855" size="200,45" halign="left" valign="center" font="Regular;40" foregroundColor="yellow" backgroundColor="#101010" transparent="1" zPosition="3" >
 			<convert type="ClockToText">Format:%H:%M:%S</convert>
@@ -1060,8 +1051,8 @@
 		<widget name="key_yellow" position="300,1000" size="150,40" zPosition="3" font="Regular;30" halign="left" valign="center" backgroundColor="#101010" transparent="1" />
 		<ePixmap pixmap="ZSkin-FHD/buttons/key_blue.png" position="475,1005" size="30,30" blend="blend" zPosition="2" />
 		<widget name="key_blue"   position="515,1000" size="150,40" zPosition="3" font="Regular;30" halign="left" valign="center" backgroundColor="#101010" transparent="1" />
-		<ePixmap pixmap="ZSkin-FHD/buttons/key_red.png" position="690,1010" size="30,30" blend="blend" zPosition="2" />
-		<widget name="key_red"    position="730,1005" size="150,40" font="Regular;30" halign="left" valign="center" backgroundColor="#101010" transparent="1" zPosition="3" />
+		<ePixmap pixmap="ZSkin-FHD/buttons/key_red.png" position="690,1005" size="30,30" blend="blend" zPosition="2" />
+		<widget name="key_red"    position="730,1000" size="150,40" font="Regular;30" halign="left" valign="center" backgroundColor="#101010" transparent="1" zPosition="3" />
 		<ePixmap pixmap="ZSkin-FHD/skin_default/buttons/key_info.png" scale="strech" position="1370,1000" size="80,35" zPosition="2" blend="blend" />
 		<ePixmap pixmap="ZSkin-FHD/skin_default/buttons/key_menu.png" scale="strech" position="1470,1000" size="80,35" zPosition="2" blend="blend" />
 	</screen>
@@ -2205,13 +2196,14 @@
 	<!-- Numberzap OK 18/02/2020 -->
 	<screen name="NumberZap" position="0,0" size="1920,1080" title="Channel" backgroundColor="#FF000000">
 		<!-- INFOBAR -->
+		<widget name="channel" position="50,1720"  size="320,150" font="Regular;110" foregroundColor="white"  backgroundColor="header" transparent="1" zPosition="5"/>
 		<ePixmap pixmap="ZSkin-FHD/menu/panels/ibbot.png" position="0,788" size="1920,347" zPosition="0" blend="blend" />
 		<ePixmap pixmap="ZSkin-FHD/menu/panels/ibtop.png" position="0,733" size="1920,347" zPosition="1" blend="blend" />
-		<!-- SERVICE - EVENTS -->
+		<widget name="number"  position="470,703" size="280,150" font="Regular;110" halign="center" valign="center" foregroundColor="#20ffff40" backgroundColor="#000000" transparent="1" zPosition="5"/>
 		<!-- Required Renderer zChannelNumber.py -->
-		<widget source="session.CurrentService" render="zChannelNumber" position="500,700" size="180,150" font="Regular;110" halign="center" valign="center" foregroundColor="#20ffff40" backgroundColor="#000000" transparent="1" zPosition="3" />
-
-		<widget source="session.CurrentService" render="Label" position="700,740" size="1000,90" font="Regular;80" noWrap="1" foregroundColor="#20ffffff" backgroundColor="#101010" transparent="1" zPosition="1" >
+		<widget source="session.CurrentService" render="zChannelNumber" position="470,699" size="280,150" font="Regular;110" halign="center" valign="center" foregroundColor="#20ffff40" backgroundColor="#000000" transparent="1" zPosition="3" />
+		<!-- SERVICE - EVENTS -->		
+		<widget source="session.CurrentService" render="Label" position="750,738" size="1000,90" font="Regular;80" noWrap="1" foregroundColor="#20ffffff" backgroundColor="#101010" transparent="1" zPosition="1" >
 			<convert type="ServiceName">Name</convert>
 		</widget>
 		<widget source="session.Event_Now" render="Label" position="140,855" size="140,45" font="Regular;40" foregroundColor="ltbluette" backgroundColor="header" transparent="1" zPosition="2" >
@@ -2239,29 +2231,16 @@
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">Default</convert>
 		</widget>
-		<!-- Required extRunningText.py -->
-		<widget source="session.Event_Next" render="extRunningText" position="275,930" size="1100,45" font="Regular;40" valign="center" foregroundColor="#505050" backgroundColor="#10202020" noWrap="0" transparent="1" zPosition="5"
-			options="movetype=swimming,direction=left,repeat=4,steptime=40,startdelay=5000,noWrap">
-			<convert type="EventName">Name</convert>
-		</widget>
-		<!--
-		<widget source="session.Event_Next" render="Label" position="275,930" size="1100,45" font="Regular;40" valign="center" foregroundColor="#505050" backgroundColor="#10202020" noWrap="0" transparent="1" zPosition="5"
-			options="movetype=swimming,direction=left,repeat=4,steptime=40,startdelay=5000,noWrap">
-			<convert type="EventName">Name</convert>
-		</widget>
-		-->
 		<widget source="session.Event_Next" render="Label" position="1345,930" size="200,45" font="Regular;40" foregroundColor="#808080" backgroundColor="header" halign="right" valign="center" transparent="1" zPosition="5">
 			<convert type="EventTime">Duration</convert>
 			<convert type="ClockToText">InMinutes</convert>
 		</widget>
 		<!-- PICON -->
-		<ePixmap pixmap="ZSkin-FHD/icons/mirror.png" position="40,570" size="417,250" zPosition="-2" />
-		<ePixmap pixmap="ZSkin-FHD/picon_default.png" position="40,570" size="417,250" zPosition="2" blend="blend" />
-		<widget source="session.CurrentService" render="Picon"  path="picon" position="40,570" size="417,250" blend="blend" zPosition="5" >
+		<ePixmap pixmap="ZSkin-FHD/icons/mirror.png" position="40,568" size="417,250" zPosition="-2" />
+		<ePixmap pixmap="ZSkin-FHD/picon_default.png" position="40,568" size="417,250" zPosition="2" blend="blend" />
+		<widget source="session.CurrentService" render="Picon" path="picon" position="40,568" size="417,250" blend="blend" zPosition="5" >
 			<convert type="ServiceName">Reference</convert>
 		</widget>
-		<widget name="channel" position="50,1720"  size="320,150" font="Regular;110" foregroundColor="white"  backgroundColor="header" transparent="1" zPosition="5"/>
-		<widget name="number"  position="500,700" size="180,150" font="Regular;110" halign="center" valign="center" foregroundColor="#20ffff40" backgroundColor="#000000" transparent="1" zPosition="5"/>
 		<!-- TUNER -->
 		<eLabel text="Tun:" position="1590,845" size="100,40" font="Regular;30" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" zPosition="3" />
 		<widget source="session.FrontendInfo" render="TunerLabel,0,input" position="1665,845" size="40,40" zPosition="3" font="Regular;30" foregroundColor="#ffff00" backgroundColor="#000000" transparent="1">
@@ -2841,15 +2820,15 @@
 	
 	<!-- Skin Selector OK 10/02/2020 -->
 	<screen name="SkinSelector" position="0,0" size="1920,1080" title="Choose your Skin" backgroundColor="transparent" flags="wfNoBorder">
-		<layout name="menu_1530"/>
+ 		<layout name="menu_830" />
 		<layout name="r-1c-s-830"/>
-		<ePixmap position="0,0" size="1330,1080" pixmap="ZSkin-FHD/bigbak/setmain.png" blend="blend" zPosition="-2" />
-		<widget name="SkinList" position="220,155" size="700,750" itemHeight="50" scrollbarMode="showOnDemand" transparent="1" zPosition="5" 
+		<ePixmap position="0,0"  size="1330,1080" pixmap="ZSkin-FHD/bigbak/setmain.png" blend="blend" zPosition="-2" />
+		<widget name="SkinList" position="220,155" size="830,750" itemHeight="50" scrollbarMode="showOnDemand" transparent="1" zPosition="5" 
 			foregroundColor="#a0a0a0" foregroundColorSelected="ltbluette" backgroundColor="#000000" backgroundColorSelected="#0b2049" selectionPixmap="ZSkin-FHD/icons/sliderb.png" />
-		<widget name="Preview" position="990,160"  size="820,446" alphatest="blend" scale="1" zPosition="5" />
-		<widget source="introduction" render="Label" position="860,990" size="880,40" font="Regular;34" halign="right" foregroundColor="yellow" backgroundColor="#000000" transparent="1" zPosition="5" />
-			<ePixmap position="220,130" size="1530,8"    pixmap="ZSkin-FHD/menu/panels/sep.png"      blend="blend" zPosition="5" />
-		<ePixmap position="220,950" size="1530,8"  pixmap="ZSkin-FHD/menu/panels/sep.png" blend="blend" zPosition="5" />
+		<eLabel position="1185,50" size="680,520" backgroundColor="#40000000" zPosition="-1" />
+		<eLabel position="1205,70" size="640,480" backgroundColor="#20000000" zPosition="-1" />
+		<widget name="Preview" position="1205,70" size="640,480" alphatest="blend" scale="strech" zPosition="5" />
+		<widget source="introduction" render="Label" position="220,870" size="830,40" font="Regular;32" halign="left" foregroundColor="yellow" backgroundColor="#000000" transparent="1" zPosition="5" />
 	</screen>
 
 	<!-- Sleeptimer edit OK 18/02/2020 -->
@@ -5390,9 +5369,8 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
 		<!-- eLabel name="DEBUG" text="PE013m" position="40,25" size="500,50" font="Regular;40" backgroundColor="#10000000" foregroundColor="#bc0004" transparent="1" zPosition="1000"/-->
 	</screen>
 
-
-	<!-- ***** SATLODGE TEAM 01/03/2020 ***** -->
-
+    <!-- ***** SATLODGE TEAM 01/03/2020 ***** -->
+	
 	<screen name="SatLodgeManualInstall" position="0,0" size="1920,1080" title="SL Download Panel" backgroundColor="#000000" flags="wfNoBorder">
  		<widget source="Title" render="Label" position="220,20" size="1000,100" font="main;76" halign="left" valign="center" foregroundColor="#808060" backgroundColor="header" transparent="1" zPosition="5" />
 		<ePixmap position="220,130" size="830,8" pixmap="ZSkin-FHD/menu/panels/sep.png" blend="blend" zPosition="5" />
@@ -5516,6 +5494,7 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
 
 	<!-- ***** SATLODGE TEAM 01/03/2020 ***** -->
 	
+
 	<!-- ChoiceBox FHD OK 08/02/2020 -->
 	<screen name="ChoiceBox" position="center,center" size="840,600" title="Input">
 		<widget name="text" position="10,10" size="800,40" font="Regular;32" halign="left" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" zPosition="5" />
